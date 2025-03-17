@@ -4,11 +4,16 @@ server:
 spring:
   application:
     name: com.kb.health
+#  datasource:
+#    driver-class-name: org.h2.Driver
+#    url: jdbc:h2:mem:coding_test;MODE=Mysql;DATABASE_TO_LOWER=TRUE
+#    username: test
+#    password: test
   datasource:
-    driver-class-name: org.h2.Driver
-    url: jdbc:h2:mem:coding_test;MODE=Mysql;DATABASE_TO_LOWER=TRUE
-    username: test
-    password: test
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/coding_test?serverTimezone=Asia/Seoul
+    username: root
+    password:
   h2:
     console:
       enabled: true
