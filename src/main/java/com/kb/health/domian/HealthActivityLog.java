@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
 
@@ -14,6 +16,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Entity
 @Table
+@EntityListeners(AuditingEntityListener.class)
 public class HealthActivityLog {
 
   @Id
@@ -27,6 +30,9 @@ public class HealthActivityLog {
   private String type;
 
   private String memo;
+
+  @CreatedDate
+  private LocalDateTime registeredAt;
 
   public HealthActivityLog(String recordKey, LocalDateTime lastUpdate, String type) {
     this.recordKey = recordKey;

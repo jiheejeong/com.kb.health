@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -15,6 +17,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Entity
 @Table
+@EntityListeners(AuditingEntityListener.class)
 public class HealthActivity {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -44,4 +47,7 @@ public class HealthActivity {
 
   @Embedded
   private HealthDevice device;
+
+  @CreatedDate
+  private LocalDateTime registeredAt;
 }
