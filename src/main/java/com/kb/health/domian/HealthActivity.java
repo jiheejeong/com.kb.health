@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Builder(toBuilder = true)
@@ -19,9 +20,9 @@ public class HealthActivity {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  private String recordkey;
+  private String recordKey;
 
-  private Integer steps;
+  private BigDecimal steps;
 
   @Embedded
   @AttributeOverrides({

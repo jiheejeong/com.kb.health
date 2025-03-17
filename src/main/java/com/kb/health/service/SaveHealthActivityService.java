@@ -2,7 +2,6 @@ package com.kb.health.service;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.kb.health.domian.HealthActivity;
 import com.kb.health.domian.HealthActivityLog;
 import com.kb.health.domian.HealthDevice;
@@ -15,9 +14,7 @@ import org.springframework.util.StringUtils;
 
 import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.ZonedDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -31,11 +28,17 @@ public class SaveHealthActivityService {
   @Transactional
   public void saveHealthActivity() {
     try {
-      final File file = ResourceUtils.getFile("classpath:INPUT_DATA1.json");
-      final Map<String, Object> customerHealthActivity = objectMapper.readValue(file, new TypeReference<Map<String, Object>>() {
-      });
-      final HealthActivityRecord healthActivity = objectMapper.convertValue(customerHealthActivity, HealthActivityRecord.class);
-      save(healthActivity);
+      final List<File> fileList = new ArrayList<>();
+      fileList.add(ResourceUtils.getFile("classpath:INPUT_DATA1.json"));
+      fileList.add(ResourceUtils.getFile("classpath:INPUT_DATA2.json"));
+      fileList.add(ResourceUtils.getFile("classpath:INPUT_DATA3.json"));
+      fileList.add(ResourceUtils.getFile("classpath:INPUT_DATA4.json"));
+      for (File file : fileList) {
+        final Map<String, Object> customerHealthActivity = objectMapper.readValue(file, new TypeReference<Map<String, Object>>() {
+        });
+        final HealthActivityRecord healthActivity = objectMapper.convertValue(customerHealthActivity, HealthActivityRecord.class);
+        save(healthActivity);
+      }
 
     } catch (IOException e) {
       e.printStackTrace();

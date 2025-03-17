@@ -20,7 +20,7 @@ public class HealthActivityLog {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  private String recordkey;
+  private String recordKey;
 
   private LocalDateTime lastUpdate;
 
@@ -28,8 +28,8 @@ public class HealthActivityLog {
 
   private String memo;
 
-  public HealthActivityLog(String recordkey, LocalDateTime lastUpdate, String type) {
-    this.recordkey = recordkey;
+  public HealthActivityLog(String recordKey, LocalDateTime lastUpdate, String type) {
+    this.recordKey = recordKey;
     this.lastUpdate = lastUpdate;
     this.type = type;
   }

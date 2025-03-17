@@ -50,7 +50,7 @@ public class HealthActivityRecord{
   @Builder
   @Jacksonized
   public static class HealActivity {
-    Integer steps;
+    BigDecimal steps;
     Period period;
     ActivityRecode distance;
     ActivityRecode calories;
@@ -68,9 +68,7 @@ public class HealthActivityRecord{
   @Builder
   @Jacksonized
   public static class Period {
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul")
-    LocalDateTime from;
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul")
-    LocalDateTime to;
+    String from;
+    String to;
   }
 }
