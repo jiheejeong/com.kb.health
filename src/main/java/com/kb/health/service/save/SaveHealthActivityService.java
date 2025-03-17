@@ -1,11 +1,12 @@
-package com.kb.health.service;
+package com.kb.health.service.save;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.kb.health.domian.HealthActivity;
 import com.kb.health.domian.HealthActivityLog;
 import com.kb.health.domian.HealthDevice;
-import com.kb.health.service.converter.HealthActivityConverter;
+import com.kb.health.service.HealthActivityGateway;
+import com.kb.health.service.HealthActivityConverter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

@@ -1,8 +1,8 @@
-package com.kb.health.service.converter;
+package com.kb.health.service;
 
 import com.kb.health.domian.HealthActivity;
 import com.kb.health.domian.HealthDevice;
-import com.kb.health.service.HealthActivityRecord;
+import com.kb.health.service.save.HealthActivityRecord;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Named;

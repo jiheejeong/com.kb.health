@@ -6,7 +6,7 @@ spring:
     name: com.kb.health
   datasource:
     driver-class-name: org.h2.Driver
-    url: jdbc:h2:mem:coding_test;MODE=Mysql
+    url: jdbc:h2:mem:coding_test;MODE=Mysql;DATABASE_TO_LOWER=TRUE
     username: test
     password: test
   h2:
@@ -14,12 +14,11 @@ spring:
       enabled: true
       path: /h2-console
   jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
       ddl-auto: create
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.H2Dialect
+        dialect: org.hibernate.dialect.MySQLDialect
         format_sql: true
         show_sql: true
     defer-datasource-initialization: true

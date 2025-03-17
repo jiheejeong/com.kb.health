@@ -20,4 +20,8 @@ public class HealthActivityGateway {
     healthActivityLogRepository.save(healthActivityLog);
     healthActivityRepository.saveAll(healthActivities);
   }
+
+  public List<HealthActivity> findAll() {
+    return healthActivityRepository.findAll();
+  }
 }

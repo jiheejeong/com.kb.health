@@ -1,4 +1,4 @@
-package com.kb.health.service;
+package com.kb.health.service.save;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Builder;
