@@ -31,4 +31,7 @@ group by record_key, DATE_FORMAT(start_time, '%Y-%m.%d');
 from health_activity
 group by record_key, DATE_FORMAT(start_time, '%Y-%m');
 
+## 결과물 
+https://github.com/jiheejeong/com.kb.health/tree/master/src/main/resources/dataresult
+
 
